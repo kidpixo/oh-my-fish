@@ -59,8 +59,11 @@ function fish_prompt
   # if set -q VIRTUAL_ENV
   #     echo (set_color white)"╰─"(set_color --bold white)(set_color -b blue white) "("(basename "$VIRTUAL_ENV")")" (set_color normal)"\$ "(set_color normal)
   # else
+  if set -q vi_mode
+      echo (set_color white)"╰─"(set_color --bold white)"["$vi_mode"] "(set_color normal)
+  else
       echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
-  # end
+  end
 end
 
 function fish_right_prompt

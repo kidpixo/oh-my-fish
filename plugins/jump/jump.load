@@ -1,7 +1,6 @@
 set -gx MARKPATH $HOME/.marks
 command mkdir -p $MARKPATH
 
-<<<<<<< HEAD
 ###########################################################
 # CDPATH: an array of directories in which to search for
 # the new directory for the cd builtin. By default, 
@@ -9,9 +8,6 @@ command mkdir -p $MARKPATH
 # variable with the values . and ~.
 
 set -gx CDPATH $MARKPATH $CDPATH
-=======
-set -gx CDPATH $MARKPATH $CDPATH # adds ~/.marks/ contents to cd completion, it could owerwrite some folder name
->>>>>>> 153977b38b210f1fd9979a6e893c287c79c467f9
 
 complete -c jump -f -a '(ls ~/.marks)'
 complete -c unmark -f -a '(ls ~/.marks)'

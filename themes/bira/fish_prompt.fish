@@ -12,7 +12,7 @@ function __user_host
 end
 
 function __current_path
-  echo -n (set_color --bold blue) (pwd) (set_color normal) 
+echo -n (set_color --bold blue) (pwd) (set_color normal) 
 end
 
 function _git_branch_name
@@ -56,7 +56,11 @@ function fish_prompt
   __ruby_version
   __git_status
   echo -e ''
-  echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
+  # if set -q VIRTUAL_ENV
+  #     echo (set_color white)"╰─"(set_color --bold white)(set_color -b blue white) "("(basename "$VIRTUAL_ENV")")" (set_color normal)"\$ "(set_color normal)
+  # else
+      echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
+  # end
 end
 
 function fish_right_prompt
@@ -66,3 +70,4 @@ function fish_right_prompt
     echo (set_color red) ↵ $st(set_color normal)
   end
 end
+

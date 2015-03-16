@@ -26,15 +26,15 @@ function fish_prompt
   # Output the prompt, left to right
 
   # Add a newline before new prompts
-  echo -e ''
+  echo ''
 
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
-      echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
+      echo -n (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
   end
 
   # Print pwd or full path
-  echo -n -s $cwd $normal
+  echo -n $cwd $normal
 
   # Show git branch and status
   if [ (_git_branch_name) ]
@@ -45,10 +45,10 @@ function fish_prompt
     else
       set git_info '(' $green $git_branch $normal ')'
     end
-    echo -n -s ' · ' $git_info $normal
+    echo -n ' · ' $git_info $normal
   end
 
   # Terminate with a nice prompt char
-  echo -e ''
-  echo -e -n -s '⟩ ' $normal
+  echo ''
+  echo -n '⟩ ' $normal
 end

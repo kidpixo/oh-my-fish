@@ -1,5 +1,13 @@
 set -gx MARKPATH $HOME/.marks
 command mkdir -p $MARKPATH
 
+###########################################################
+# CDPATH: an array of directories in which to search for
+# the new directory for the cd builtin. By default, 
+# the fish configuration defines CDPATH to be a universal 
+# variable with the values . and ~.
+
+set -gx CDPATH $MARKPATH $CDPATH
+
 complete -c jump -f -a '(ls ~/.marks)'
 complete -c unmark -f -a '(ls ~/.marks)'
